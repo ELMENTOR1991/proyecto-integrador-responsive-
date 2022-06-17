@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es">
+<head itemscope itemtype="http://schema.org/WebSite">
+    <meta itemprop="name" content="IONOS Digital Guide"/>
+    <script src="//cdn.ionos.de/dgsg/9c2134ba72b4/499e488bab80/launch-59f3a3c442fa.min.js" async></script>
+
+<meta charset="utf-8">
+<!-- 
+	This website is powered by TYPO3 - inspiring people to share!
+	TYPO3 is a free open source Content Management Framework initially created by Kasper Skaarhoj and licensed under GNU/GPL.
+	TYPO3 is copyright 1998-2019 of Kasper Skaarhoj. Extensions are copyright of their respective owners.
+	Information and contribution at https://typo3.org/
+-->
+
+<base href="https://www.ionos.es/digitalguide/">
+
+
+<link as="image" rel="preload" href="fileadmin/DigitalGuide/Websites/wordpress-hand-t.jpg" />
+<meta name="generator" content="TYPO3 CMS">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="meta-category" content="Digitalguide">
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="robots" content="index,follow">
+
+
+<link rel="stylesheet" type="text/css" href="typo3temp/assets/compressed/font-awesome.min-8e339212d7395f0d3996f365ba9db186.css.gzip?1651151463" media="all">
+<link rel="stylesheet" type="text/css" href="typo3temp/assets/compressed/merged-f3c783ffafdd7d6e53a4cc91332fac16-2e4665f7aec0bc4bd1c9669bdea40065.css.gzip?1651151463" media="all">
+
+
+<script src="typo3temp/assets/compressed/merged-88cbc9fc0fa19a2e7aaff8f17a7c02b8-996a42b5be465ee1014ed8448c533683.js.gzip?1556264996" type="text/javascript"></script>
+<script src="typo3temp/assets/compressed/merged-0825b0879565b833d5524c3835c0f4e0-4a33940dbf65f721e7a296334c3e4d6a.js.gzip?1651151462" type="text/javascript"></script>
+
+
+<link rel="stylesheet" type="text/css" media="all"  href="https://www.ionos.es/digitalguide/typo3conf/ext/ratgeberportal/Resources/Public/Css/cookie-styling-dark-bottom.css" />
+      <link rel="shortcut icon" href="/favicon.ico" /><link rel="canonical" href="https://www.ionos.es/digitalguide/hosting/blogs/estructura-y-componentes-de-los-temas-de-wordpress/"><link rel="alternate" hreflang="es" href="https://www.ionos.es/digitalguide/hosting/blogs/estructura-y-componentes-de-los-temas-de-wordpress/"><link rel="alternate" hreflang="es-ES" href="https://www.ionos.es/digitalguide/hosting/blogs/estructura-y-componentes-de-los-temas-de-wordpress/"><link rel="alternate" hreflang="en-GB" href="https://www.ionos.co.uk/digitalguide/hosting/blogs/wordpress-themes-elements-and-structure/"><link rel="alternate" hreflang="en" href="https://www.ionos.com/digitalguide/hosting/blogs/wordpress-themes-elements-and-structure/"><link rel="alternate" hreflang="en-US" href="https://www.ionos.com/digitalguide/hosting/blogs/wordpress-themes-elements-and-structure/"><link rel="alternate" hreflang="en-CA" href="https://www.ionos.ca/digitalguide/hosting/blogs/wordpress-themes-elements-and-structure/"><link rel="alternate" hreflang="fr" href="https://www.ionos.fr/digitalguide/hebergement/blogs/themes-wordpress-elements-et-structure/"><link rel="alternate" hreflang="fr-FR" href="https://www.ionos.fr/digitalguide/hebergement/blogs/themes-wordpress-elements-et-structure/"><link rel="alternate" hreflang="es-MX" href="https://www.ionos.mx/digitalguide/hosting/blogs/estructura-y-componentes-de-los-temas-de-wordpress/"><link rel="alternate" hreflang="it-IT" href="https://www.ionos.it/digitalguide/hosting/blog/temi-wordpress-componenti-e-struttura/"><link rel="alternate" hreflang="de-AT" href="https://www.ionos.at/digitalguide/hosting/blogs/wordpress-theme-bestandteile-und-aufbau/"><link rel="alternate" hreflang="de" href="https://www.ionos.de/digitalguide/hosting/blogs/wordpress-theme-bestandteile-und-aufbau/"><link rel="alternate" hreflang="de-DE" href="https://www.ionos.de/digitalguide/hosting/blogs/wordpress-theme-bestandteile-und-aufbau/">
+	<title>Estructura y componentes de los temas de WordPress - IONOS</title>
+	<meta name="description" content="header.php, single.php o style.css: ¿sabes qué son las plantillas de WordPress? Descubre los elementos básicos de los temas de WordPress." />
+	
+<meta property="og:title" content="Conoce a fondo los temas de WordPress ">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://www.ionos.es/digitalguide/fileadmin/DigitalGuide/Websites/wordpress-hand-t.jpg">
+<meta property="og:url" content="https://www.ionos.es/digitalguide/hosting/blogs/estructura-y-componentes-de-los-temas-de-wordpress/">
+<meta property="og:site_name" content="IONOS Digitalguide">
+<meta property="og:description" content="header.php, single.php o style.css: ¿sabes qué son las plantillas de WordPress? Descubre los elementos básicos de los temas de WordPress.">
+<meta property="og:locale" content="es_ES">
+<script type="text/javascript">
+        var cookieContent = '';
+        var params = document.location.search;
+
+        if (params.indexOf('ac') != -1) {
+          var regExp = new RegExp(/ac=([a-z0-9.]*)/i);
+          var matches = params.match(regExp);
+
+          if (matches != null && matches.length > 0) {
+              cookieContent = matches[1];
+          }
+        }
+        else {
+            var referrer = document.referrer;
+            var cookieValueSearchEngine = 'OM.WE.WEo50K361688T7073a';
+            var cookieValueOther = 'OM.WE.WEd32K41385T7073a';
+
+            if (referrer != '') {
+                var re = new RegExp(/^http[s]?:\/\/(www\.)?(google|bing|yahoo|duckduckgo|ecosia|ask.com|t-online|myway|qwant|such.web.de|gmx.net|startpage.com|msn.com|yandex)/i);
+                var matches = referrer.match(re);
+
+                cookieContent = (matches != null && matches.length > 0) ? cookieValueSearchEngine : cookieValueOther;
+            }
+        }
+        var cookieName = 'ac-whorder-es';
+        if(document.cookie.indexOf(cookieName) == -1 && cookieContent != '') {
+            var thirtyDaysFromNow = Date.now() + (86400000 * 90);
+            var expiresDate = new Date(thirtyDaysFromNow).toUTCString(); 
+            var cookieSettings = '; expires=' + expiresDate + '; path=/';
+            document.cookie = cookieName + '=' + cookieContent + cookieSettings;
+        }
+        </script>
+</head>
+<body class="see-drop page-1339">
+
+
+<div id="wrapper">
+
+	
+	<header id="header"><span class="scroll-indicator"><span></span></span><div class="header-holder"><div class="container"><div class="logo"><a href="/digitalguide/"><span class="text">Digital Guide</span><div class="img-logo rb"><img src="fileadmin/templates/images/ionos_logo.svg" alt="IONOS"></div></a></div><nav id="nav"><a href="#" class="nav-opener"><span></span></a><div class="nav-drop"><div class="nav-wrap"><ul id="navigation" class="navigation"><li ><a href="paginas-web/">Páginas web</a><div class="inner-drop hidden-drop"><div class="container"><ul><li ><a href="paginas-web/creacion-de-paginas-web/" title="Creación de páginas web">Creación de páginas web</a></li><li ><a href="paginas-web/diseno-web/" title="Diseño web">Diseño web</a></li><li ><a href="paginas-web/desarrollo-web/" title="Desarrollo web">Desarrollo web</a></li><li ><a href="paginas-web/derecho-digital/" title="Derecho  digital">Derecho  digital</a></li></ul></div></div></li><li class="inner-drop-active "><a href="hosting/">Hosting</a><div class="inner-drop"><div class="container"><ul><li ><a href="hosting/cms/" title="CMS">CMS</a></li><li ><a href="hosting/blogs/" title="Blogs">Blogs</a></li><li ><a href="hosting/cuestiones-tecnicas/" title="Cuestiones técnicas">Cuestiones técnicas</a></li></ul></div></div></li><li ><a href="servidores/">Servidores</a><div class="inner-drop hidden-drop"><div class="container"><ul><li ><a href="servidores/know-how/" title="Know How">Know How</a></li><li ><a href="servidores/configuracion/" title="Configuración">Configuración</a></li><li ><a href="servidores/seguridad/" title="Seguridad">Seguridad</a></li><li ><a href="servidores/herramientas/" title="Herramientas">Herramientas</a></li></ul></div></div></li><li ><a href="dominios/">Dominios</a><div class="inner-drop hidden-drop"><div class="container"><ul><li ><a href="dominios/extensiones-de-dominio/" title="Extensiones de dominio">Extensiones de dominio</a></li><li ><a href="dominios/gestion-de-dominios/" title="Gestión de dominios">Gestión de dominios</a></li><li ><a href="dominios/noticias-sobre-dominos/" title="Noticias sobre dominos">Noticias sobre dominos</a></li><li ><a href="dominios/consejos-sobre-dominios/" title="Consejos sobre dominios">Consejos sobre dominios</a></li></ul></div></div></li><li ><a href="online-marketing/">Online Marketing</a><div class="inner-drop hidden-drop"><div class="container"><ul><li ><a href="online-marketing/vender-en-internet/" title="Vender en Internet">Vender en Internet</a></li><li ><a href="online-marketing/marketing-para-motores-de-busqueda/" title="Marketing para motores de búsqueda">Marketing para motores de búsqueda</a></li><li ><a href="online-marketing/redes-sociales/" title="Redes sociales">Redes sociales</a></li><li ><a href="online-marketing/analisis-web/" title="Análisis web">Análisis web</a></li></ul></div></div></li><li ><a href="correo-electronico/">Correo electrónico</a><div class="inner-drop hidden-drop"><div class="container"><ul><li ><a href="correo-electronico/e-mail-marketing/" title="E-mail marketing">E-mail marketing</a></li><li ><a href="correo-electronico/seguridad-correo-electronico/" title="Seguridad correo electrónico">Seguridad correo electrónico</a></li><li ><a href="correo-electronico/cuestiones-tecnicas/" title="Cuestiones técnicas">Cuestiones técnicas</a></li></ul></div></div></li><li><a href="https://www.ionos.es">Productos IONOS</a><div class="inner-drop hidden-drop"><div class="container"><ul id="second-navigation" class="second-navigation"><li class="has-drop-down level2"><a title="dominios">Dominios</a><div class="level3"><div class="container"><ul><li><a href="https://www.ionos.es/dominios/dominios?ac=OM.WE.WEo50K421511T7073a" class="has-drop-down-c">Dominios: Registra y compra ahora</a></li><li class="level"><a href="https://www.ionos.es/dominios/nuevas-terminaciones-dominios?ac=OM.WE.WEo50K421511T7073a" class="has-drop-down-c">Nuevos nombres de Dominios</a></li><li class="level"><a href="https://www.ionos.es/dominios/transferencia-dominios?ac=OM.WE.WEo50K421511T7073a" class="has-drop-down-c">Transferencia de Dominios</a></li><li class="level"><a href="https://www.ionos.es/dominios/registrar-dominio-privado?ac=OM.WE.WEo50K421511T7073a" class="has-drop-down-c">Registro de dominio privado</a></li><li class="level"><a href="https://www.ionos.es/tools/whois-domain?ac=OM.WE.WEo50K421511T7073a" class="has-drop-down-c">Información Whois</a></li><li class="level"><a href="https://www.ionos.es/dominios/domain-check?ac=OM.WE.WEo50K421511T7073a" class="has-drop-down-c">Domain Check</a></li><li class="level"><a href="https://www.ionos.es/dominios/dominio-gratis?ac=OM.WE.WEo50K421511T7073a" class="has-drop-down-c">Dominio gratis</a></li></ul></div></div></li><li class="has-drop-down level2"><a title="correooffice">Correo &amp; Office</a><div class="level3"><div class="container"><ul><li><a href="https://www.ionos.es/soluciones-oficina/correo?ac=OM.WE.WEo50K421511T7073a" class="has-drop-down-c">Dirección de correo electrónico</a></li></ul></div></div></li><li class="has-drop-down level2"><a title="servidores">Servidores</a><div class="level3"><div class="container"><ul><li><a href="https://www.ionos.es/cloud/servidores-cloud?ac=OM.WE.WEo50K421511T7073a" class="has-drop-down-c">Servidor Cloud</a></li><li class="level"><a href="https://www.ionos.es/servidores/servidores-dedicados?ac=OM.WE.WEo50K421511T7073a" class="has-drop-down-c">Servidores Dedicados</a></li><li class="level"><a href="https://www.ionos.es/servidores/vps?ac=OM.WE.WEo50K421511T7073a" class="has-drop-down-c">Servidores Virtuales</a></li><li class="level"><a href="https://www.ionos.es/servidores/servidores?ac=OM.WE.WEo50K421511T7073a" class="has-drop-down-c">Servidores</a></li><li class="level"><a href="https://www.ionos.es/cloud-empresarial?ac=OM.WE.WEo50K421511T7073a" class="has-drop-down-c">Cloud Empresarial</a></li></ul></div></div></li><li class="has-drop-down level2"><a title="seguridad">Seguridad</a><div class="level3"><div class="container"><ul><li><a href="https://www.ionos.es/seguridad/certificado-ssl?ac=OM.WE.WEo50K421511T7073a" class="has-drop-down-c">Certificado SSL</a></li><li class="level"><a href="https://www.ionos.es/tools/ssl-checker?ac=OM.WE.WEo50K421511T7073a" class="has-drop-down-c">SSL Checker</a></li></ul></div></div></li><li class="has-drop-down level2"><a title="paginaswebhosting">Páginas Web &amp; Hosting</a><div class="level3"><div class="container"><ul><li><a href="https://www.ionos.es/pagina-web/crear-pagina-web?ac=OM.WE.WEo50K421511T7073a" class="has-drop-down-c">Crea tu página web</a></li><li class="level"><a href="https://www.ionos.es/pagina-web/templates?ac=OM.WE.WEo50K421511T7073a" class="has-drop-down-c">Plantillas web</a></li><li class="level"><a href="https://www.ionos.es/soluciones-ecommerce/tiendas-online?ac=OM.WE.WEo50K421511T7073a" class="has-drop-down-c">Tiendas Online</a></li><li class="level"><a href="https://www.ionos.es/alojamiento/linux-hosting?ac=OM.WE.WEo50K421511T7073a" class="has-drop-down-c">Hosting Linux</a></li><li class="level"><a href="https://www.ionos.es/alojamiento/hosting-wordpress?ac=OM.WE.WEo50K421511T7073a" class="has-drop-down-c">WordPress Hosting</a></li><li><a href="https://www.ionos.es/alojamiento/windows-hosting?ac=OM.WE.WEo50K421511T7073a" class="has-drop-down-c">Windows Hosting</a></li></ul></div></div></li><li class="has-drop-down level2"><a title="herramientas">Herramientas</a><div class="level3"><div class="container"><ul><li><a href="https://www.ionos.es/tools/analisis-web?ac=OM.WE.WEo50K421511T7073a" class="has-drop-down-c">Análisis Web</a></li><li class="level"><a href="https://www.ionos.es/tools/analisis-seo?ac=OM.WE.WEo50K421511T7073a" class="has-drop-down-c">Análisis SEO</a></li><li class="level"><a href="https://www.ionos.es/tools/crear-favicon?ac=OM.WE.WEo50K421511T7073a" class="has-drop-down-c">Crear favicon</a></li><li class="level"><a href="https://www.ionos.es/tools/crear-logo?ac=OM.WE.WEo50K421511T7073a" class="has-drop-down-c">Crear logo</a></li><li class="level"><a href="https://www.ionos.es/tools/direccion-ip?ac=OM.WE.WEo50K421511T7073a" class="has-drop-down-c">¿Cual es mi IP?</a></li><li class="level"><a href="https://phishing-contact.ionos.es/es/" class="has-drop-down-c">Servicio de Validación</a></li></ul></div></div></li></ul></div></div></li></ul></div></div></nav><div class="header-info"><ul class="list-inline list-links"><li><div class="dropdown search-box"><a href="#" class="search-opener dropdown-toggle" data-toggle="dropdown"><span class="icon-search"></span></a><div class="search-drop dropdown-menu"><form class="search-form" action="buscar/" method="post"><fieldset><div class="form-group"><input class="form-control" type="search" placeholder="Buscar" name="search"><button type="submit"><span class="icon-search"></span></button></div></fieldset></form></div></div></li><li class="sub-drop-opener dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
+									Productos IONOS</a><div class="sub-drop-wrap dropdown-menu"><div class="container"><div class="row"><div class="col-sm-3"><strong class="sub-head">
+        
+            Dominios
+        
+    </strong><ul class="sub-menu-list list-unstyled"><li><a href="https://www.ionos.es/dominios/dominios?ac=OM.WE.WEo50K421451T7073a"><strong class="sub-title">Dominios: Registra y compra ahora</strong><p></p></a></li><li><a href="https://www.ionos.es/dominios/nuevas-terminaciones-dominios?ac=OM.WE.WEo50K421451T7073a"><strong class="sub-title">Nuevos nombres de Dominios</strong><p> Más de 400 nuevas terminaciones de dominio</p></a></li><li><a href="https://www.ionos.es/dominios/transferencia-dominios?ac=OM.WE.WEo50K421451T7073a"><strong class="sub-title">Transferencia de Dominios</strong><p> Transfiere tu dominio fácilmente</p></a></li><li><a href="https://www.ionos.es/dominios/registrar-dominio-privado?ac=OM.WE.WEo50K421451T7073a"><strong class="sub-title">Registro de dominio privado</strong><p> Dominio con privacidad WHOIS incluido gratis</p></a></li><li><a href="https://www.ionos.es/dominios/dominio-gratis?ac=OM.WE.WEo50K421451T7073a"><strong class="sub-title">Dominio gratis</strong><p></p></a></li><li><a href="https://www.ionos.es/tools/whois-domain?ac=OM.WE.WEo50K421451T7073a"><strong class="sub-title">Información Whois</strong><p> Busca información sobre un dominio</p></a></li><li><a href="https://www.ionos.es/dominios/domain-check?ac=OM.WE.WEo50K421451T7073a"><strong class="sub-title">Domain Check</strong><p></p></a></li></ul><strong class="sub-head">
+        
+            Seguridad
+
+        
+    </strong><ul class="sub-menu-list list-unstyled"><li><a href="https://www.ionos.es/seguridad/certificado-ssl?ac=OM.WE.WEo50K421451T7073a"><strong class="sub-title">Certificado SSL</strong><p> Máxima Seguridad con accesso https</p></a></li><li><a href="https://www.ionos.es/tools/ssl-checker?ac=OM.WE.WEo50K421451T7073a"><strong class="sub-title">SSL Checker</strong><p> Comprueba gratis de tu cifrado HTTPS</p></a></li></ul></div><div class="col-sm-3"><strong class="sub-head">
+        
+            Páginas Web &amp; Hosting
+
+        
+    </strong><ul class="sub-menu-list list-unstyled"><li><a href="https://www.ionos.es/pagina-web/crear-pagina-web?ac=OM.WE.WEo50K421451T7073a"><strong class="sub-title">Crea tu página web</strong><p> Crea fácilmente la página web de tu negocio</p></a></li><li><a href="https://www.ionos.es/pagina-web/templates?ac=OM.WE.WEo50K421451T7073a"><strong class="sub-title">Plantillas web</strong><p> Múltiples diseños y gran variedad de plantillas</p></a></li><li><a href="https://www.ionos.es/soluciones-ecommerce/tiendas-online?ac=OM.WE.WEo50K421451T7073a"><strong class="sub-title">Tiendas Online</strong><p> Crea tu propia tienda online rápidamente</p></a></li><li><a href="https://www.ionos.es/alojamiento/alojamiento-web?ac=OM.WE.WEo50K421451T7073a"><strong class="sub-title">Hosting</strong><p> Alojamiento web para profesionales</p></a></li><li><a href="https://www.ionos.es/alojamiento/linux-hosting?ac=OM.WE.WEo50K421451T7073a"><strong class="sub-title">Hosting Linux</strong><p> La elección ideal para Apache, PHP y MySQL</p></a></li><li><a href="https://www.ionos.es/alojamiento/hosting-wordpress?ac=OM.WE.WEo50K421451T7073a"><strong class="sub-title">WordPress Hosting</strong><p> Hosting profesional para WordPress</p></a></li><li><a href="https://www.ionos.es/alojamiento/windows-hosting?ac=OM.WE.WEo50K421451T7073a"><strong class="sub-title">Windows Hosting</strong><p> Alojamiento web para asp</p></a></li></ul><strong class="sub-head">
+        
+            Correo &amp; Office
+
+        
+    </strong><ul class="sub-menu-list list-unstyled"><li><a href="https://www.ionos.es/soluciones-oficina/correo?ac=OM.WE.WEo50K421451T7073a"><strong class="sub-title">Dirección de correo electrónico</strong><p> Correo electrónico profesional</p></a></li><li><a href="https://www.ionos.es/soluciones-oficina/microsoft-office?ac=OM.WE.WEo50K421451T7073a"><strong class="sub-title">Microsoft 365</strong><p> Trabajar de forma más productiva</p></a></li></ul></div><div class="col-sm-3"><strong class="sub-head">
+        
+            Servidores
+
+        
+    </strong><ul class="sub-menu-list list-unstyled"><li><a href="https://www.ionos.es/cloud/servidores-cloud?ac=OM.WE.WEo50K421451T7073a"><strong class="sub-title">Servidor Cloud</strong><p> Soluciones de cloud hosting y respaldo</p></a></li><li><a href="https://www.ionos.es/servidores/servidores-dedicados?ac=OM.WE.WEo50K421451T7073a"><strong class="sub-title">Servidores Dedicados</strong><p> Hosting dedicado en España: Windows o Linux</p></a></li><li><a href="https://www.ionos.es/servidores/vps?ac=OM.WE.WEo50K421451T7073a"><strong class="sub-title">Servidores Virtuales</strong><p> Servidor Virtual Privado al mejor precio</p></a></li><li><a href="https://www.ionos.es/cloud-empresarial?ac=OM.WE.WEo50K421451T7073a"><strong class="sub-title">Cloud Empresarial</strong><p> Cloud IaaS altamente escalable y configurable de manera individual</p></a></li></ul></div><div class="col-sm-3"><strong class="sub-head">
+        
+            Herramientas
+
+        
+    </strong><ul class="sub-menu-list list-unstyled"><li><a href="https://www.ionos.es/tools/analisis-web?ac=OM.WE.WEo50K421451T7073a"><strong class="sub-title">Análisis Web</strong><p> Análisis del rendimiento de tu página web</p></a></li><li><a href="https://www.ionos.es/tools/analisis-seo?ac=OM.WE.WEo50K421451T7073a"><strong class="sub-title">Análisis SEO</strong><p> Comprueba gratis si tu sitio web está optimizada</p></a></li><li><a href="https://www.ionos.es/tools/crear-favicon?ac=OM.WE.WEo50K421451T7073a"><strong class="sub-title">Crear favicon</strong><p> Crea tu favicon gratis en linea</p></a></li><li><a href="https://www.ionos.es/tools/crear-logo?ac=OM.WE.WEo50K421451T7073a"><strong class="sub-title">Crear logo</strong><p> Generador de logos para tu negocio</p></a></li><li><a href="https://www.ionos.es/tools/direccion-ip?ac=OM.WE.WEo50K421451T7073a"><strong class="sub-title">¿Cual es mi IP?</strong><p> Descubre tu direccion IP gratis </p></a></li><li><a href="https://phishing-contact.ionos.es/es/"><strong class="sub-title">Servicio de Validación</strong><p> Comprobar la autenticidad de un correo de IONOS </p></a></li></ul></div></div></div></div></li></ul></div></div></div></header>
+	<main id="main">
+		<script type="application/ld+json">{ "@context": "http://schema.org","@type": "BreadcrumbList", "itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https:\/\/www.ionos.es","name":"IONOS"}},{"@type":"ListItem","position":2,"item":{"@id":"https:\/\/www.ionos.es\/digitalguide","name":"Consejero"}},{"@type":"ListItem","position":3,"item":{"@id":"hosting\/","name":"Hosting"}},{"@type":"ListItem","position":4,"item":{"@id":"hosting\/blogs\/","name":"Blogs"}},{"@type":"ListItem","position":5,"item":{"@id":"hosting\/blogs\/estructura-y-componentes-de-los-temas-de-wordpress\/","name":"Estructura y componentes de los temas de WordPress"}}]}</script><nav class="breadcrumbs"><div class="container"><ol class="list-inline"><li><a href="/" title="IONOS" itemprop="item">IONOS</a></li><li><a href="" title="Digitalguide" itemprop="item"><span itemprop="name">Digitalguide</span></a></li><li><a href="hosting/" title="Hosting" itemprop="item"><span itemprop="name">Hosting</span></a></li><li><a href="hosting/blogs/" title="Blogs" itemprop="item"><span itemprop="name">Blogs</span></a></li><li><a href="hosting/blogs/estructura-y-componentes-de-los-temas-de-wordpress/" title="Estructura y componentes de los temas de WordPress" itemprop="item"><span itemprop="name">Estructura y componentes de los temas de WordPress</span></a></li></ol></div></nav>
+		<div class="main-container">
+			<div class="container meta-holder"><div class="row"><div class="col-sm-8"><div class="article-meta"><ul class="list-inline meta"><li><time datetime=" 2016-11-14"><span class="icon-clock-o"></span>  14.11.16</time></li><li><a href="hosting/blogs/">Blogs</a></li></ul><ul class="list-inline list-info"><li></li><li><ul class="list-inline social-networks"><li><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.ionos.es/digitalguide/hosting/blogs/estructura-y-componentes-de-los-temas-de-wordpress/" class="facebook"><span class="icon-facebook"></span></a></li><li><a target="_blank" href="https://twitter.com/intent/tweet?source=https://www.ionos.es/digitalguide/hosting/blogs/estructura-y-componentes-de-los-temas-de-wordpress/&text=https://www.ionos.es/digitalguide/hosting/blogs/estructura-y-componentes-de-los-temas-de-wordpress/%20%23DigitalGuide" class="twitter"><span class="icon-twitter"></span></a></li><li><a target="_blank" href="https://www.xing.com/spi/shares/new?url=https://www.ionos.es/digitalguide/hosting/blogs/estructura-y-componentes-de-los-temas-de-wordpress/" class="xing"><span class="icon-xing"></span></a></li><li><a target="_blank" href="http://www.linkedin.com/shareArticle?mini=true&url=https://www.ionos.es/digitalguide/hosting/blogs/estructura-y-componentes-de-los-temas-de-wordpress/" class="linkedin"><span class="icon-linkedin"></span></a></li></ul></li></ul></div></div></div></div>
+			
+
+
+
+
+			<div class="container two-columns 	">
+			<div class="row">
+				<!--TYPO3SEARCH_begin-->
+				
+						<div class="col-sm-8" id="content"><div class="content-block"><div class="aligncenter visual-img hidden-xs"><picture><!--[if IE 9]><video style="display: none;"><![endif]--><source srcset="fileadmin/_processed_/e/b/csm_wordpress-hand-t_ba4f9d1ca7.jpg" media="(max-width: 767px)"><source srcset="fileadmin/_processed_/e/b/csm_wordpress-hand-t_169422abe2.jpg" media="(max-width: 1023px)"><source srcset="fileadmin/DigitalGuide/Websites/wordpress-hand-t.jpg"><!--[if IE 9]></video><![endif]--><img src="fileadmin/DigitalGuide/Websites/wordpress-hand-t.jpg" alt="Estructura y componentes de los temas de WordPress" title="Estructura y componentes de los temas de WordPress"></picture></div><div id="c31566" class="frame frame-default frame-type-header frame-layout-0"><header><h1 class="blue">Conoce a fondo los temas de WordPress </h1></header></div><div id="c31567"><div class="text-row ce-textpic ce-right ce-intext"><div class="ce-bodytext"><p><a href="hosting/cms/que-es-wordpress-una-perspectiva-sobre-el-cms/">WordPress</a>, el popular gestor de contenidos, se caracteriza por la separación entre diseño, por un lado, y programación, por otro. Los denominados temas permiten <strong>definir la visualización de contenidos en el frontend</strong> sin modificar el código. Básicamente, lo que hace un tema de WordPress es preparar un código fuente que describe cómo se han de solicitar y componer los contenidos almacenados en la base de datos del servidor para que, cuando sea solicitada, se origine una página web dinámica y pueda ser entregada al navegador web. Con ellos, los administradores web pueden diseñar libremente la página en su totalidad dentro de las posibilidades que permite cada tema. </p><p>La estructura básica de un tema de WordPress consiste en varios <strong>archivos fuente PHP</strong> llamados archivos de plantilla (template files), <strong>hojas de estilo</strong> y <strong>datos de localización</strong>, así como archivos JavaScript opcionales y gráficos.</p><p>A continuación, te mostramos cuáles son los componentes de los temas de WordPress que deberías conocer, qué función tienen y cómo se combinan entre ellos.</p></div></div></div><div id="c99750" class="frame frame-default frame-type-list frame-layout-0"><div class="tx-toc"><div id="toc" class="toc content-table smoothscroll 
+         numbers 
+          
+          
+         
+         togglestyle"><div id="toctitle" class="opener"><strong class="h3">Índice</strong><span class="toctoggle"><a href="#" id="togglelinkStyle"></a></span></div><ol class="ordered-list list-content toclist hierarchy"><li class="toclevel-2"><a href="hosting/blogs/estructura-y-componentes-de-los-temas-de-wordpress/#c31568"><span class="toctext" data-slug="elementos-basicos-de-los-temas-de-wordpress">Elementos básicos de los temas de WordPress</span></a><ol class="ordered-list"><li class="toclevel-3"><a href="hosting/blogs/estructura-y-componentes-de-los-temas-de-wordpress/#c31569"><span class="toctext" data-slug="plantillas-template-files-">Plantillas (template files)</span></a></li><li class="toclevel-3"><a href="hosting/blogs/estructura-y-componentes-de-los-temas-de-wordpress/#c31570"><span class="toctext" data-slug="etiquetas-de-plantilla-template-tags-">Etiquetas de plantilla (template tags)</span></a></li><li class="toclevel-3"><a href="hosting/blogs/estructura-y-componentes-de-los-temas-de-wordpress/#c31581"><span class="toctext" data-slug="etiquetas-include-include-tags-">Etiquetas include (include tags)</span></a></li><li class="toclevel-3"><a href="hosting/blogs/estructura-y-componentes-de-los-temas-de-wordpress/#c31584"><span class="toctext" data-slug="template-hooks-plugin-api-">Template hooks (Plugin API)</span></a></li><li class="toclevel-3"><a href="hosting/blogs/estructura-y-componentes-de-los-temas-de-wordpress/#c31585"><span class="toctext" data-slug="etiquetas-condicionales-conditional-tags-">Etiquetas condicionales (conditional tags)</span></a></li><li class="toclevel-3"><a href="hosting/blogs/estructura-y-componentes-de-los-temas-de-wordpress/#c31587"><span class="toctext" data-slug="the-loop">The Loop </span></a></li></ol></li></ol></div></div></div><div id="c31568"><h2 class="blue">Elementos básicos de los temas de WordPress</h2><div class="text-row ce-textpic ce-right ce-intext"><div class="ce-bodytext"><p>Mientras que, en esencia, una página web estática consiste en un único documento HTML que incluye todos los contenidos, así como elementos JavaScript y elementos CSS, un tema de WordPress está constituido por varios <strong>archivos de plantilla</strong>, también denominados, sencillamente, plantillas. Las plantillas de WordPress están unidas entre sí mediante etiquetas include (<strong>include tags</strong>) y describen, con la ayuda de etiquetas de plantilla o <strong>template tags</strong>, cómo se ha de mostrar el contenido almacenado en la base de datos del servidor de forma integrada. Si su visualización está ligada a ciertas condiciones, se usan entonces los denominados <strong>conditional tags</strong> o etiquetas condicionales. Los llamados “ganchos” o <strong>template hooks</strong> permiten, a su vez, integrar plugins en los temas. La edición de los contenidos se gestiona mediante un mecanismo conocido en la terminología de WordPress como <strong>Loop</strong>.</p></div></div></div><div id="c31569"><h3>Plantillas (template files)</h3><div class="text-row ce-textpic ce-right ce-intext"><div class="ce-bodytext"><p>Los temas de WordPress, con todos sus elementos fundamentales, pueden considerarse una especie de plan arquitectónico para una web. La página dinámica que se entrega al navegador cuando un usuario la solicita se compone de una serie de elementos que, a semejanza de las piezas de un juego de construcción, se pueden seleccionar de forma independiente en función de si el usuario quiere ver la página principal de su blog, un artículo o un comentario. Estas piezas básicas reciben el nombre de <strong>plantillas o archivos de plantilla</strong> (del inglés, <em>template files</em>) y se trata de archivos PHP que contienen elementos HTML, código PHP y etiquetas de plantilla (template tags), cada uno de los cuales tiene una tarea definida exactamente.</p><p>En principio, un tema de WordPress se considera válido cuando contiene las plantillas <em>index.php</em> y <em>style.css</em>, aunque, por regla general, un tema de WordPress suele contener un gran número de plantillas diferentes capaces de representar distintos tipos de contenido, lo que demuestran la gran capacidad en cuanto a funciones de este popular software. La siguiente lista contiene las <strong>plantillas básicas</strong> que suelen encontrarse en casi cada tema de WordPress:</p><ul><li><strong>style.css</strong><strong>: </strong>este es uno de los dos elementos de presencia obligatoria en cada tema de WordPress y contiene la <strong>información del encabezado (header)</strong>, el nombre del tema, una breve descripción del mismo, el nombre del autor o desarrollador, el número de la versión, la licencia bajo la cual figura y un enlace a la misma (License URI). Asimismo, la plantilla style.css actúa como hoja de estilo principal de la página, permitiendo la integración del código CSS del tema.</li></ul><ul><li><strong>index.php</strong><strong>: </strong>este es el segundo elemento obligatorio en un tema de WordPress y actúa, por regla general, como <strong>sumario de artículos</strong>, pudiendo ser utilizado como página principal. En la jerarquía de las plantillas de WordPress, index.php es considerado el último archivo Fallback: si para la emisión del contenido no se creó ninguna plantilla específica, el software recurre entonces al index.php. Su construcción se guía, básicamente, por la cantidad de código residente en otras plantillas. En un tema de WordPress sencillo, el index.php suele contener la mayor parte del código fuente, incluido el directorio HTML de raíz, el encabezado (header), el pie de página (footer), las barras laterales (sidebar) y el menú de navegación, pero en temas más complejos estos elementos suelen definirse en plantillas independientes como el header.php, el footer.php o el sidebar.php, de manera que el index.php acaba cumpliendo exclusivamente la función de estructura básica. Esta plantilla muestra habitualmente una cierta cantidad de artículos, previamente definida en el panel de administración, en forma de sumario abreviado.<br /> 	&nbsp;</li><li><strong>header.php</strong><strong>: </strong>cuando se usa, este archivo suele contener <strong>información fundamental de una página</strong> como el doctype, el tag de HTML de apertura, así como el encabezado con los <a href="paginas-web/desarrollo-web/los-meta-tags-mas-importantes-y-su-funcion/">meta tags</a>, enlaces a hojas de estilo y scripts. Además, aquí suele abrirse la etiqueta <em>body</em>, de forma que permite albergar el encabezado visible del tema y la navegación en el header.php.</li><li><strong>footer.php</strong><strong>: </strong>esta plantilla es la contrapartida al header.php y alberga la parte visible del pie de página. Aquí suele cerrarse, en general, tanto la etiqueta <em>body</em> como la de HTML.<br /> 	&nbsp;</li><li><strong>sidebar.php: </strong>en este archivo se guardan los contenidos de las barras laterales, bien introduciendo el código manualmente o recurriendo a widgets especiales, accesibles desde la función <em>dynamic sidebar</em> (barra lateral dinámica). Este procedimiento tiene la ventaja de que el contenido de la barra lateral se puede gestionar después desde el panel de administración.<br /> 	&nbsp;</li><li><strong>content.php: </strong>las entradas en la <strong>vista general o en el sumario del blog</strong> suelen contener un título enlazado al artículo y una imagen de vista previa, así como un pequeño resumen del contenido de la entrada y el enlace “Leer más”. Esta es la información que permite integrar este archivo, además de metadatos como la fecha del artículo, el autor, las categorías o las etiquetas.<br /> 	&nbsp;</li><li><strong>single.php: </strong>este archivo es necesario para poder <strong>ver el artículo entero</strong> cuando se hace clic en el enlace.<br /> 	&nbsp;</li><li><strong>home.php:</strong> esta plantilla permite crear una <strong>página principal por separado</strong>. Si no se usa, la página muestra, basándose en index.php, una vista general de las entradas más actuales como página principal.<br /> 	&nbsp;</li><li><strong>page.php: </strong>los temas de WordPress están optimizados para mostrar las entradas de un blog en sucesión cronológica. Junto a estos contenidos dinámicos, muchos administradores ponen a disposición de sus lectores otros apartados como “Sobre mí” o el Aviso legal como <strong>páginas estáticas</strong>. Esto es posible gracias a este fichero, que permite crear páginas individuales a partir del diseño de otros ficheros como index.php o single.php.<br /> 	&nbsp;</li><li><strong>404.php: </strong>este archivo sirve para <strong>crear una página de error 404</strong> para el blog o la web. En este caso lo mejor es integrar un cuadro de búsqueda para facilitar a los usuarios explorar la página en busca de la información deseada.</li></ul><ul><li><strong>search.php: </strong>este archivo permite <strong>mostrar los resultados de la búsqueda</strong>.<br /> 	&nbsp;</li><li><strong>archive.php, category.php, tag.php, author.php, date.php: </strong>junto a la función de búsqueda, WordPress también ofrece una serie de plantillas por medio de las cuales se pueden <strong>ordenar las entradas según criterios específicos</strong>. Para ello, se pueden usar como filtros las categorías, las etiquetas, los autores o la fecha de publicación. Estas plantillas sirven para poder mostrar los contenidos. Si no figuran estos ficheros, WordPress utiliza la información que encuentra en el archive.php.<br /> 	&nbsp;</li><li><strong>comments.php: </strong>esta es la plantilla necesaria<strong></strong>si se quiere ofrecer a los usuarios la posibilidad de <strong>comentar los artículos</strong>, ya que contiene el formulario para ello.&nbsp;<br /> 	&nbsp;</li><li><strong>attachment.php: </strong>este archivo permite mostrar a los lectores <strong>contenido adicional</strong> como gráficos y archivos PDF o multimedia en una ventana independiente.<br /> 	&nbsp;</li><li><strong>image.php:</strong> este es una versión especial del fichero anterior y con él se puede definir una plantilla independiente para la <strong>visualización de gráficos</strong>. Si no se define este archivo, el software utiliza el attachment.php.<br /> 	&nbsp;</li><li><strong>rtl.css: </strong>si el tema de WordPress que quieres implementar soporta idiomas que se escriben <strong>de derecha a izquierda</strong>, como el árabe o el hebreo, se necesita este archivo.</li></ul><p>Para enlazar las diferentes piezas entre sí y poder cargar los contenidos desde la base de datos en el servidor, dentro de las plantillas se utilizan unas funciones denominadas, en la terminología del CMS, template tags o <strong>etiquetas de plantilla</strong>.</p></div></div></div><div id="c31570"><h3>Etiquetas de plantilla (template tags)</h3><div class="text-row ce-textpic ce-right ce-intext"><div class="ce-bodytext"><p>Como template tags se entienden las funciones,&nbsp; incluidas en las plantillas, necesarias para solicitar contenidos de la base de datos. Mientras que en las páginas estáticas suelen estar incluidas en el código fuente del documento HTML, las plantillas de WordPress contienen únicamente <strong>indicaciones respecto a los contenidos que han de ser integrados</strong>. Las etiquetas de plantilla permiten al software del CMS generar cada página de forma dinámica en el mismo momento en que se entrega. A la luz del siguiente ejemplo se muestra la ventaja de tal concepto.</p><p>Generalmente, un proyecto online dispone de un <strong>nombre o título</strong>, visible en cada una de sus subpáginas. Para poder integrarlo en una plantilla, se usa la siguiente etiqueta de plantilla:</p></div></div></div><div id="c31571" class="frame frame-default frame-type-fs_code_snippet frame-layout-0"><pre class="line-numbers language-mixed" data-language="mixed"><code class="language-mixed">bloginfo(&#039;name&#039;)</code></pre></div><div id="c31572"><div class="text-row ce-textpic ce-center ce-above"><div class="ce-bodytext"><p>Esta etiqueta es muy útil, por ejemplo, para publicar el título de la página de forma automática.</p></div></div></div><div id="c31573" class="frame frame-default frame-type-fs_code_snippet frame-layout-0"><pre class="line-numbers language-mixed" data-language="mixed"><code class="language-mixed">&lt;title&gt;&lt;?php bloginfo(&#039;name&#039;); ?&gt; |&lt;?php wp_title(); ?&gt;&lt;/title&gt;</code></pre></div><div id="c31574"><div class="text-row ce-textpic ce-right ce-intext"><div class="ce-bodytext"><p>Mientras la función <em>bloginfo('name')</em> sirve para introducir el nombre de la web, <em>wp_title() </em>identifica al nombre de la subpágina actual. Los datos que han de revelar estas etiquetas (nombre de la web, nombre de la subpágina) a la hora de abrirse la página se obtienen de la base de datos en el servidor. Según este esquema y, a partir de estos datos, el software del CMS genera entonces este título:</p></div></div></div><div id="c31575" class="frame frame-default frame-type-fs_code_snippet frame-layout-0"><pre class="line-numbers language-mixed" data-language="mixed"><code class="language-mixed">Nombre del blog | Título de la subpágina</code></pre></div><div id="c31576"><div class="text-row ce-textpic ce-right ce-intext"><div class="ce-bodytext"><p>Por el contrario, en una <strong>página web estática</strong>, los títulos de las páginas se han de introducir tal cual en cada página HTML del proyecto:</p></div></div></div><div id="c31577" class="frame frame-default frame-type-fs_code_snippet frame-layout-0"><pre class="line-numbers language-mixed" data-language="mixed"><code class="language-mixed">&lt;title&gt;Nombre del blog | Título de la subpágina&lt;/title&gt;</code></pre></div><div id="c31578"><div class="text-row ce-textpic ce-right ce-intext"><div class="ce-bodytext"><p>Ahora bien, ¿qué pasa si se quiere cambiar al nombre del blog? En el caso de una página estática, se han de realizar los cambios manualmente en el documento de HTML de cada subpágina, mientras que en el de una página dinámica llevar a cabo actualizaciones es mucho más sencillo, ya que los cambios que afectan a todas las páginas de la web se pueden realizar en un único lugar en la base de datos, donde residen, y los cuales se pueden cargar en la página oportuna mediante los template tags.</p><p>Los títulos, los contenidos de las entradas o los metadatos se pueden guardar en plantillas siguiendo el mismo esquema:</p></div></div></div><div id="c31579" class="frame frame-default frame-type-fs_code_snippet frame-layout-0"><pre class="line-numbers language-mixed" data-language="mixed"><code class="language-mixed">the_title() 
+the_content()
+the_author() 
+the_time()
+the_category() 
+the_tags() </code></pre></div><div id="c31580"><div class="text-row ce-textpic ce-right ce-intext"><div class="ce-bodytext"><p>En el <a href="https://codex.wordpress.org/es:Template_Tags" title="Codex de WordPress" target="_blank" class="external-link-new-window">Codex de WordPress.org</a> se encuentra un sumario con todos los template tags disponibles.</p></div></div></div><div id="c31581"><h3>Etiquetas include (include tags)</h3><div class="text-row ce-textpic ce-right ce-intext"><div class="ce-bodytext"><p>Un tipo especial de etiquetas para las plantillas de WordPress son las denominadas etiquetas include, utilizadas dentro de un tema para poder cargar archivos como header.php, footer.php o sidebar.php. También en este caso se trata de funciones internas que se integran en plantillas fundamentales como index.php, single.php o page.php de la siguiente forma:</p></div></div></div><div id="c31582" class="frame frame-default frame-type-fs_code_snippet frame-layout-0"><pre class="line-numbers language-mixed" data-language="mixed"><code class="language-mixed">get_header()
+get_footer()
+get_sidebar() </code></pre></div><div id="c31583"><div class="text-row ce-textpic ce-right ce-intext"><div class="ce-bodytext"><p>También aquí es fácil entender cuál es la ventaja de este proceder: si los códigos para el encabezado, para el pie y para la barra lateral se cargan en plantillas previstas para ello, los cambios que se realicen en estas tres plantillas se aplicarán a todas las subpáginas de la web que obtengan estos contenidos mediante etiquetas include.</p></div></div></div><div id="c31584"><h3>Template hooks (Plugin API)</h3><div class="text-row ce-textpic ce-right ce-intext"><div class="ce-bodytext"><p>En el caso de los denominados “ganchos” o template hooks, se trata de <strong>interfaces</strong> de unión entre el tema de WordPress y las funciones individuales o <strong>plugins</strong> del CMS que permiten a estos “engancharse” o incorporarse al resto del software. La mayor parte de estas interfaces ya están depositadas en el núcleo de WordPress y es con ellas que un desarrollador de temas o un usuario puede determinar una acción, antes, por ejemplo, de que comience una tarea o después de que una solicitud a la base de datos haya terminado. Así, se podría integrar información especial directamente en el encabezado, en el pie o en la barra lateral. Los desarrolladores pueden, también, integrar ganchos propios en sus temas.</p></div></div></div><div id="c31585"><h3>Etiquetas condicionales (conditional tags)</h3><div class="text-row ce-textpic ce-right ce-intext"><div class="ce-bodytext"><p>Estas etiquetas consisten en <strong>indicaciones en PHP</strong> como <em>if</em>, <em>else</em> o <em>while</em> que permiten, en combinación con las funciones de WordPress, vincular la representación de determinados contenidos a unas <strong>condiciones</strong>, como podría ser, por ejemplo, un saludo de bienvenida para usuarios registrados:</p></div></div></div><div id="c31586" class="frame frame-default frame-type-fs_code_snippet frame-layout-0"><pre class="line-numbers language-mixed" data-language="mixed"><code class="language-mixed">if ( is_user_logged_in() ):
+    echo &#039;Welcome, registered user!&#039;;
+else:
+    echo &#039;Welcome, visitor!&#039;;
+endif;</code></pre></div><div id="c31587"><h3>The Loop </h3><div class="text-row ce-textpic ce-right ce-intext"><div class="ce-bodytext"><p>Este mecanismo incluido en el software de WordPress es el responsable de la <strong>visualización de los contenidos</strong> y consiste en diversas funciones de WordPress enlazadas entre sí mediante etiquetas condicionales. El siguiente ejemplo muestra la estructura básica de un loop de WordPress:</p></div></div></div><div id="c31588" class="frame frame-default frame-type-fs_code_snippet frame-layout-0"><pre class="line-numbers language-mixed" data-language="mixed"><code class="language-mixed">&lt;?php if (have_posts()) : while (have_posts()) : the_post(); ?&gt;
+   &lt;h2&gt;&lt;?php the_title(); ?&gt;&lt;/h2&gt;
+   &lt;div class=&quot;entry&quot;&gt;
+      &lt;?php the_excerpt(); ?&gt;
+   &lt;/div&gt;
+&lt;?php endwhile; endif; ?&gt;</code></pre></div><div id="c31589"><div class="text-row ce-textpic ce-right ce-intext"><div class="ce-bodytext"><p>El fragmento de código <em>if (have_post())</em> en la primera línea indica a WordPress que compruebe si existen entradas en la base de datos y, en caso afirmativo, el fragmento de código <em>while (have_posts()) : the_post() </em>solicita al software que lleve a cabo las funciones en el loop que siguen a continuación, hasta que <em>have_posts()</em> ya no sea verdad, es decir, hasta que ya no haya más entradas.</p><p>De esta manera, el loop abarca todas las funciones hasta el <strong>statement de PHP</strong><em>endwhile</em> en la última línea, que, en este ejemplo, serían la función <em>the_title()</em>, que permite la visualización del título del artículo (H2) y la función <em>the_exerpt()</em>, que ordena al software cargar un extracto de la entrada desde la base de datos. Para la representación de los contenidos se ha definido que el título del artículo tenga un formato <em>h2</em> y la vista previa del artículo sea visualizada en el interior de una <strong>caja <em>div</em></strong> con el nombre de clase CSS <em>entry</em>.</p><p>Un loop muy sencillo es aquel que muestra el título y la vista previa de las entradas en una lista en la página principal de un blog, comenzando por la entrada más actual. La cantidad de las publicaciones que se muestran, cada una debajo de la anterior, varía y se puede definir en el panel de administración. Sin embargo, lo más habitual son <strong>aquellos loops más complejos</strong> que, junto a metadatos como autor, fecha, categoría o etiquetas, también contienen un enlace a la página donde se muestra el artículo completo.</p></div></div></div><div class="article-meta"><ul class="list-inline meta"><li><time datetime=" 2016-11-14"><span class="icon-clock-o"></span>  14.11.16</time></li><li><a href="hosting/blogs/">Blogs</a></li></ul><ul class="list-inline list-info"><li></li><li><ul class="list-inline social-networks"><li><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.ionos.es/digitalguide/hosting/blogs/estructura-y-componentes-de-los-temas-de-wordpress/" class="facebook"><span class="icon-facebook"></span></a></li><li><a target="_blank" href="https://twitter.com/intent/tweet?source=https://www.ionos.es/digitalguide/hosting/blogs/estructura-y-componentes-de-los-temas-de-wordpress/&text=https://www.ionos.es/digitalguide/hosting/blogs/estructura-y-componentes-de-los-temas-de-wordpress/%20%23DigitalGuide" class="twitter"><span class="icon-twitter"></span></a></li><li><a target="_blank" href="https://www.xing.com/spi/shares/new?url=https://www.ionos.es/digitalguide/hosting/blogs/estructura-y-componentes-de-los-temas-de-wordpress/" class="xing"><span class="icon-xing"></span></a></li><li><a target="_blank" href="http://www.linkedin.com/shareArticle?mini=true&url=https://www.ionos.es/digitalguide/hosting/blogs/estructura-y-componentes-de-los-temas-de-wordpress/" class="linkedin"><span class="icon-linkedin"></span></a></li></ul></li></ul></div><ul class="metatags-list list-inline list-unstyled"><li><a title="Usabilidad" href="tags/usabilidad/">Usabilidad</a></li><li><a title="Plantillas" href="tags/plantillas/">Plantillas</a></li><li><a title="Wordpress" href="tags/wordpress/">Wordpress</a></li></ul></div><section class="container related-articles"><strong class="h3 text-center">Artículos similares</strong><div class="row post-holder"><div class="col-sm-4"><article class="info-post"><div class="img-holder"><a title="Los mejores plugins de WordPress" href="hosting/blogs/los-mejores-plugins-de-wordpress/"><picture><!--[if IE 9]><video style="display: none;"><![endif]--><source srcset="fileadmin/_processed_/7/e/csm_wordpress-plug-ins-t_761d6e1a2e.jpg" media="(max-width: 767px)"><source srcset="fileadmin/_processed_/7/e/csm_wordpress-plug-ins-t_753222cc64.jpg" media="(max-width: 1023px)"><source srcset="fileadmin/DigitalGuide/Teaser/wordpress-plug-ins-t.jpg"><!--[if IE 9]></video><![endif]--><img src="fileadmin/DigitalGuide/Teaser/wordpress-plug-ins-t.jpg" alt="Los mejores plugins de WordPress" title="Los mejores plugins de WordPress" loading="lazy"></picture></a></div><h2 class="blue"><a title="Los mejores plugins para WordPress de 2022" href="hosting/blogs/los-mejores-plugins-de-wordpress/">Los mejores plugins para WordPress de 2022</a></h2><ul class="list-inline meta"><li><time datetime="2022-01-18"><span class="icon-clock-o"></span> 18.01.2022</time></li><li><a href="hosting/blogs/">Blogs</a></li></ul><p>
+        El CMS WordPress es muy popular porque permite, incluso a principiantes, crear fácilmente un blog o una página web totalmente funcional. Aquellos que quieran utilizarlo para crear proyectos más complejos también podrán sacar provecho de sus extensiones de pago. Con los plugins para WordPress adecuados, la plataforma podrá adaptarse a tus necesidades y complementarse con otras funciones muy...
+    </p><div class="social-block"><ul class="list-inline social-networks"><li><a target="_blank" href='https://www.facebook.com/sharer/sharer.php?u=https://www.ionos.es/digitalguide/hosting/blogs/los-mejores-plugins-de-wordpress/' class="facebook"><span class="icon-facebook"></span></a></li><li><a target="_blank" href="https://twitter.com/intent/tweet?source=https://www.ionos.es/digitalguide/hosting/blogs/los-mejores-plugins-de-wordpress/&text=https://www.ionos.es/digitalguide/hosting/blogs/los-mejores-plugins-de-wordpress/%20%23DigitalGuide" class="twitter"><span class="icon-twitter"></span></a></li><li><a target="_blank" href="https://www.xing.com/spi/shares/new?url=https://www.ionos.es/digitalguide/hosting/blogs/los-mejores-plugins-de-wordpress/" class="xing"><span class="icon-xing"></span></a></li><li><a target="_blank" href="http://www.linkedin.com/shareArticle?mini=true&url=https://www.ionos.es/digitalguide/hosting/blogs/los-mejores-plugins-de-wordpress/" class="linkedin"><span class="icon-linkedin"></span></a></li></ul></div></article></div><div class="col-sm-4"><article class="info-post"><div class="img-holder"><a title="Los mejores frameworks de WordPress" href="hosting/blogs/los-mejores-frameworks-de-wordpress/"><picture><!--[if IE 9]><video style="display: none;"><![endif]--><source srcset="fileadmin/_processed_/5/d/csm_framework-t_ca3a177bde.jpg" media="(max-width: 767px)"><source srcset="fileadmin/_processed_/5/d/csm_framework-t_afd615f5fd.jpg" media="(max-width: 1023px)"><source srcset="fileadmin/DigitalGuide/Teaser/framework-t.jpg"><!--[if IE 9]></video><![endif]--><img src="fileadmin/DigitalGuide/Teaser/framework-t.jpg" alt="Los mejores frameworks de WordPress" title="Los mejores frameworks de WordPress" loading="lazy"></picture></a></div><h2 class="blue"><a title="Frameworks WordPress: el camino fácil hacia el tema deseado" href="hosting/blogs/los-mejores-frameworks-de-wordpress/">Frameworks WordPress: el camino fácil hacia el tema deseado</a></h2><ul class="list-inline meta"><li><time datetime="2019-05-27"><span class="icon-clock-o"></span> 27.05.2019</time></li><li><a href="hosting/blogs/">Blogs</a></li></ul><p>
+        Los temas de WordPress son una solución perfecta para darle un aspecto especial a tu proyecto web y añadirle características especiales de manera sencilla. Para ello, rara vez necesitarás habilidades de programación. Muchos themes sirven como base para muchas plantillas de diseño disponibles actualmente en el mercado y estos cuentan con editores de diseño, funciones básicas y están estructurados...
+    </p><div class="social-block"><ul class="list-inline social-networks"><li><a target="_blank" href='https://www.facebook.com/sharer/sharer.php?u=https://www.ionos.es/digitalguide/hosting/blogs/los-mejores-frameworks-de-wordpress/' class="facebook"><span class="icon-facebook"></span></a></li><li><a target="_blank" href="https://twitter.com/intent/tweet?source=https://www.ionos.es/digitalguide/hosting/blogs/los-mejores-frameworks-de-wordpress/&text=https://www.ionos.es/digitalguide/hosting/blogs/los-mejores-frameworks-de-wordpress/%20%23DigitalGuide" class="twitter"><span class="icon-twitter"></span></a></li><li><a target="_blank" href="https://www.xing.com/spi/shares/new?url=https://www.ionos.es/digitalguide/hosting/blogs/los-mejores-frameworks-de-wordpress/" class="xing"><span class="icon-xing"></span></a></li><li><a target="_blank" href="http://www.linkedin.com/shareArticle?mini=true&url=https://www.ionos.es/digitalguide/hosting/blogs/los-mejores-frameworks-de-wordpress/" class="linkedin"><span class="icon-linkedin"></span></a></li></ul></div></article></div><div class="col-sm-4"><article class="info-post"><div class="img-holder"><a title="Cómo crear plugins para WordPress" href="hosting/blogs/como-crear-plugins-para-wordpress/"><picture><!--[if IE 9]><video style="display: none;"><![endif]--><source srcset="fileadmin/_processed_/9/5/csm_wordpress-plug-ins-t_d95748a196.jpg" media="(max-width: 767px)"><source srcset="fileadmin/_processed_/9/5/csm_wordpress-plug-ins-t_520e7c54c7.jpg" media="(max-width: 1023px)"><source srcset="fileadmin/DigitalGuide/Hosting/wordpress-plug-ins-t.jpg"><!--[if IE 9]></video><![endif]--><img src="fileadmin/DigitalGuide/Hosting/wordpress-plug-ins-t.jpg" alt="Cómo crear plugins para WordPress" title="Cómo crear plugins para WordPress" loading="lazy"></picture></a></div><h2 class="blue"><a title="Cómo crear plugins para WordPress: amplía tu CMS" href="hosting/blogs/como-crear-plugins-para-wordpress/">Cómo crear plugins para WordPress: amplía tu CMS</a></h2><ul class="list-inline meta"><li><time datetime="2019-06-21"><span class="icon-clock-o"></span> 21.06.2019</time></li><li><a href="hosting/blogs/">Blogs</a></li></ul><p>
+        Desde hace mucho tiempo, WordPress es más que un sencillo software para crear blogs. Hoy en día es considerado como un potente CMS para la creación y gestión de páginas web y tiendas online. Gracias a un incontable número de plugins, el software puede ampliarse hasta adquirir una amplia gama de características, tales como funciones para crear encuestas y estadísticas, conexiones a redes sociales o...
+    </p><div class="social-block"><ul class="list-inline social-networks"><li><a target="_blank" href='https://www.facebook.com/sharer/sharer.php?u=https://www.ionos.es/digitalguide/hosting/blogs/como-crear-plugins-para-wordpress/' class="facebook"><span class="icon-facebook"></span></a></li><li><a target="_blank" href="https://twitter.com/intent/tweet?source=https://www.ionos.es/digitalguide/hosting/blogs/como-crear-plugins-para-wordpress/&text=https://www.ionos.es/digitalguide/hosting/blogs/como-crear-plugins-para-wordpress/%20%23DigitalGuide" class="twitter"><span class="icon-twitter"></span></a></li><li><a target="_blank" href="https://www.xing.com/spi/shares/new?url=https://www.ionos.es/digitalguide/hosting/blogs/como-crear-plugins-para-wordpress/" class="xing"><span class="icon-xing"></span></a></li><li><a target="_blank" href="http://www.linkedin.com/shareArticle?mini=true&url=https://www.ionos.es/digitalguide/hosting/blogs/como-crear-plugins-para-wordpress/" class="linkedin"><span class="icon-linkedin"></span></a></li></ul></div></article></div><div class="col-sm-4"><article class="info-post"><div class="img-holder"><a title="Thesis para WordPress en proyectos web responsivos" href="hosting/blogs/thesis-para-wordpress-en-proyectos-web-responsivos/"><picture><!--[if IE 9]><video style="display: none;"><![endif]--><source srcset="fileadmin/_processed_/9/5/csm_framework-wordpress-t_5860321e70.jpg" media="(max-width: 767px)"><source srcset="fileadmin/_processed_/9/5/csm_framework-wordpress-t_5e22fbd693.jpg" media="(max-width: 1023px)"><source srcset="fileadmin/DigitalGuide/Teaser/framework-wordpress-t.jpg"><!--[if IE 9]></video><![endif]--><img src="fileadmin/DigitalGuide/Teaser/framework-wordpress-t.jpg" alt="Thesis para WordPress en proyectos web responsivos" title="Thesis para WordPress en proyectos web responsivos" loading="lazy"></picture></a></div><h2 class="blue"><a title="Thesis para WordPress: un framework con carácter SEO" href="hosting/blogs/thesis-para-wordpress-en-proyectos-web-responsivos/">Thesis para WordPress: un framework con carácter SEO</a></h2><ul class="list-inline meta"><li><time datetime="2019-05-27"><span class="icon-clock-o"></span> 27.05.2019</time></li><li><a href="hosting/blogs/">Blogs</a></li></ul><p>
+        En el framework Thesis para WordPress las opiniones están muy divididas: por un lado, hay unos que valoran la diversidad de los diseños modulares del tema y, por otro, hay otros que consideran que esto supone, precisamente, una complicación a la hora de trabajar con nuevas plantillas de diseño para el sistema de gestión de contenidos. En términos generales, el framework Thesis se presenta como un...
+    </p><div class="social-block"><ul class="list-inline social-networks"><li><a target="_blank" href='https://www.facebook.com/sharer/sharer.php?u=https://www.ionos.es/digitalguide/hosting/blogs/thesis-para-wordpress-en-proyectos-web-responsivos/' class="facebook"><span class="icon-facebook"></span></a></li><li><a target="_blank" href="https://twitter.com/intent/tweet?source=https://www.ionos.es/digitalguide/hosting/blogs/thesis-para-wordpress-en-proyectos-web-responsivos/&text=https://www.ionos.es/digitalguide/hosting/blogs/thesis-para-wordpress-en-proyectos-web-responsivos/%20%23DigitalGuide" class="twitter"><span class="icon-twitter"></span></a></li><li><a target="_blank" href="https://www.xing.com/spi/shares/new?url=https://www.ionos.es/digitalguide/hosting/blogs/thesis-para-wordpress-en-proyectos-web-responsivos/" class="xing"><span class="icon-xing"></span></a></li><li><a target="_blank" href="http://www.linkedin.com/shareArticle?mini=true&url=https://www.ionos.es/digitalguide/hosting/blogs/thesis-para-wordpress-en-proyectos-web-responsivos/" class="linkedin"><span class="icon-linkedin"></span></a></li></ul></div></article></div><div class="col-sm-4"><article class="info-post"><div class="img-holder"><a title="Temas de WordPress: los mejores diseños para tu web" href="hosting/blogs/temas-de-wordpress-los-mejores-disenos-para-tu-web/"><picture><!--[if IE 9]><video style="display: none;"><![endif]--><source srcset="fileadmin/_processed_/e/b/csm_wordpress-hand-t_ba4f9d1ca7.jpg" media="(max-width: 767px)"><source srcset="fileadmin/_processed_/e/b/csm_wordpress-hand-t_169422abe2.jpg" media="(max-width: 1023px)"><source srcset="fileadmin/DigitalGuide/Websites/wordpress-hand-t.jpg"><!--[if IE 9]></video><![endif]--><img src="fileadmin/DigitalGuide/Websites/wordpress-hand-t.jpg" alt="Temas de WordPress: los mejores diseños para tu web" title="Temas de WordPress: los mejores diseños para tu web" loading="lazy"></picture></a></div><h2 class="blue"><a title="Plantillas de Wordpress: los mejores temas de WordPress gratuitos y premium" href="hosting/blogs/temas-de-wordpress-los-mejores-disenos-para-tu-web/">Plantillas de Wordpress: los mejores temas de WordPress gratuitos y premium</a></h2><ul class="list-inline meta"><li><time datetime="2022-01-13"><span class="icon-clock-o"></span> 13.01.2022</time></li><li><a href="hosting/blogs/">Blogs</a></li></ul><p>
+        Además de tener el contenido adecuado, el diseño de tu página web debe ser el correcto: El CMS WordPress es conocido por el hecho de que puede cambiar el aspecto de tu página web con solo unos pocos clics. Esto es aún más fácil con los temas de WordPress adecuados. Sin embargo, la variedad de plantillas de WordPress es enorme. ¡Te presentamos los mejores temas de WordPress! 
+    </p><div class="social-block"><ul class="list-inline social-networks"><li><a target="_blank" href='https://www.facebook.com/sharer/sharer.php?u=https://www.ionos.es/digitalguide/hosting/blogs/temas-de-wordpress-los-mejores-disenos-para-tu-web/' class="facebook"><span class="icon-facebook"></span></a></li><li><a target="_blank" href="https://twitter.com/intent/tweet?source=https://www.ionos.es/digitalguide/hosting/blogs/temas-de-wordpress-los-mejores-disenos-para-tu-web/&text=https://www.ionos.es/digitalguide/hosting/blogs/temas-de-wordpress-los-mejores-disenos-para-tu-web/%20%23DigitalGuide" class="twitter"><span class="icon-twitter"></span></a></li><li><a target="_blank" href="https://www.xing.com/spi/shares/new?url=https://www.ionos.es/digitalguide/hosting/blogs/temas-de-wordpress-los-mejores-disenos-para-tu-web/" class="xing"><span class="icon-xing"></span></a></li><li><a target="_blank" href="http://www.linkedin.com/shareArticle?mini=true&url=https://www.ionos.es/digitalguide/hosting/blogs/temas-de-wordpress-los-mejores-disenos-para-tu-web/" class="linkedin"><span class="icon-linkedin"></span></a></li></ul></div></article></div></div></section><div class="category-description"></div></div>
+					
+
+
+				<!--TYPO3SEARCH_end-->
+				
+						<div class="col-sm-4" id="sidebar">
+
+							
+									
+									
+<div id="c188856" class="frame frame-default frame-type-html frame-layout-0"><div class="sidebar-sticky-box"><h3>Productos asociados</h3><div class="row"><div class="col-xs-12 sidebar-sticky-box-inhalt"><div class="col-xs-4"><img alt="IONOS Web Hosting" src="https://www.ionos.es/digitalguide/fileadmin/DigitalGuide/Product_Icons/webhosting.svg"></div><div class="sidebar-sticky-box-text" class="col-xs-8">Hosting</div></div></div><button class="btn btn-primary btn-block button-dg" type="button" target="_blank" onclick="websiteSBSitecat();window.open('https://www.ionos.es/alojamiento/alojamiento-web?ac=OM.WE.WEo50K361642T7073a')" role="button">Ver tarifas <span class="icon-triangle-right"></span></button></div><script type="text/javascript">
+function websiteSBSitecat(){
+    if (typeof window.s === "object" && typeof window.s.apl === 'function' && typeof window.s.t === 'function') {
+       s.events2=s.apl(s.events2, "event114", ",", 1);
+       s.t(s);
+   }
+}
+</script></div>
+
+
+								
+
+							
+<div id="c188894" class="frame frame-default frame-type-html frame-layout-0"><div class="reseller-box"><h3>Hosting para agencias</h3><p class="">Ofrece un servicio fiable y de alto rendimiento a tus clientes con un pack hosting de IONOS.</p><button class="btn btn-primary btn-block button-dg" type="button" target="_blank" onclick="globalSBSitecat();window.open('https://www.ionos.es/colaboradores/hosting-para-agencias?ac=OM.WE.WEo50K361688T7073a#packs')" role="button">Ver packs <span class="icon-triangle-right"></span></button></div><script type="text/javascript">
+function globalSBSitecat(){
+    if (typeof window.s === "object" && typeof window.s.apl === 'function' && typeof window.s.t === 'function') {
+       s.events2=s.apl(s.events2, "event113", ",", 1);
+       s.t(s);
+   }
+}
+</script></div>
+
+
+
+						<div class="side-block open-close" id="popular-articles"><h3 class="opener" data-responsive-accordion="1023">
+                Artículos Favoritos
+                <span class="iconCloseOpen "></span></h3><div class="container-info-blog slide"><div class="info-blog"><h4 class="h5 blue"><a title="WordPress: borrar la caché" href="hosting/blogs/wordpress-borrar-la-cache/">WordPress: borrar la caché
+                                        <p class=shabstract>Borrando la caché de WordPress, permitirás a los visitantes de tu página web de acceder siempre a la versión más actual de la misma...</span></p></a></h4></div><div class="info-blog"><h4 class="h5 blue"><a title="Crear páginas web con wordpress: primeros pasos" href="hosting/blogs/crear-paginas-web-con-wordpress-primeros-pasos/">Crear páginas web con wordpress: primeros pasos
+                                        <p class=shabstract>Esta introducción sobre cómo usar WordPress pretende aclarar paso a paso la creación de una web propia...</span></p></a></h4></div><div class="info-blog"><h4 class="h5 blue"><a title="Plugins de cookies de WordPress" href="hosting/blogs/plugins-de-cookies-de-wordpress/">Plugins de cookies de WordPress
+                                        <p class=shabstract>En este artículo te enseñamos los cuatro mejores plugins para el diseño de los avisos de cookies de WordPress...</span></p></a></h4></div><div class="info-blog"><h4 class="h5 blue"><a title="Integrar Google Analytics en WordPress" href="beliebte-artikel/integrar-google-analytics-en-wordpress/">Integrar Google Analytics en WordPress
+                                        <p class=shabstract>Aprende a vincular la herramienta con tu página web respetando las normativas de protección de datos...</span></p></a></h4></div><div class="info-blog"><h4 class="h5 blue"><a title="Duplicar página en WordPress" href="hosting/blogs/duplicar-pagina-en-wordpress/">Duplicar página en WordPress
+                                        <p class=shabstract>Aprende a copiar páginas y artículos en WordPress de forma rápida y sencilla, en Gutenberg o en el editor de código de WordPress...</span></p></a></h4></div></div></div>
+			</div>
+			
+		</div>
+		</div>
+		<div class="mobile-box"></div>
+		<div class="container info-aside"></div>
+		</div>
+	</main>
+
+<footer id="footer">
+	<div class="container footer-frame">
+		<ul class="list-inline social-networks contact">
+			
+				<li><a href="http://ionos.ly/IONOS_FB_ES" class="facebook" target="_blank"><span class="icon-facebook"></span></a></li>
+			
+			
+				<li><a href="http://ionos.ly/IONOS_TW_ES" class="twitter" target="_blank"><span class="icon-twitter"></span></a></li>
+			
+			
+			
+				<li><a href="http://ionos.ly/IONOS_YT_ES" class="youtube" target="_blank"><img src="fileadmin/templates/images/youtube.png" width="28" height="28" alt="youtube"></a></li>
+			
+			
+				<li><a href="http://ionos.ly/IONOS_IN" class="linkedin" target="_blank"><span class="icon-linkedin"></span></a></li>
+			
+			
+			
+				<li><a href="rss-feeds/rss-digitalguide/feed.rss" class="rss-feed" style="background:#ffffff" target="_blank"><img src="fileadmin/rss-feed.png" width="28" height="28" alt="rss-feed"></a></li>
+			
+		</ul>
+	</div>
+
+	<div class="footer-holder">
+		<div class="container">
+			<ul class="list-inline list-footer"><li class="footer-nav-item"><a href="https://www.ionos.es/empresa" class="footer-nav-link" target="_blank">Empresa</a></li><li class="footer-nav-item"><a href="https://www.ionos.es/cookies" class="footer-nav-link" target="_blank">Uso de Cookies</a></li><li class="footer-nav-item"><a href="https://www.ionos.es/terms-gtc/terms-privacy" class="footer-nav-link" target="_blank">Privacidad</a></li><li class="footer-nav-item"><a href="https://www.ionos.es/ayuda" class="footer-nav-link" target="_blank">Centro de Ayuda</a></li><li class="footer-nav-item"><span class="footer-nav-copyright">&copy; 2022  <a href="https://www.ionos.es" title="IONOS Cloud S.L.U." target="_blank">IONOS Cloud S.L.U.</a></span></li></ul>
+		</div>
+	</div>
+	<a href="#wrapper" class="btn btn-top" style="display: block; opacity: 1;"><span class="icon-angle-up"></span></a>
+
+</footer>
+
+</div>
+
+  <script>
+    window.cookieconsent_options = {
+      learnMore: 'Política de Cookies.',
+      dismiss: 'OK',
+      message: 'Utilizamos cookies propias y de terceros para mejorar nuestros servicios y mostrarle publicidad relacionada con sus preferencias mediante el análisis de sus hábitos de navegación. Si continua navegando, consideramos que acepta su uso. Puede obtener más información, o bien conocer cómo cambiar la configuración de su navegador en nuestra',
+      link: 'https://www.ionos.es/cookies',
+      
+    };
+  </script>
+
+
+<div id="bio_ep">
+<div id="c188967" class="frame frame-default frame-type-html frame-layout-0"><div class="popup-header"><img src="fileadmin/templates/images/ionos_logo.svg" alt="IONOS" width="50" height="50"></div><br/><h2 class="exit-intent" style="padding-right:0px; font-size: 35px;">¡No te vayas! ¡Tenemos algo para ti!
+ <br>Consigue tu dominio .es un año gratis.</h2><div class="exit-sub">Introduce el dominio que deseas en la barra de búsqueda para comprobar su disponibilidad.</div><div class="exit-sub exit-sub-offer">12 meses desde 0€/año IVA incl.</div><div class="exit-sub sub-sub">después 10 €/año IVA incl.</div><div class="domaincheck-wrap"><div class="col-right"><form action="https://ionos.es/dcjump" class="innerform" method="GET" target="_blank"><input name="ac" value="OM.WE.WEo50K361597T7073a" style="display:none"><input placeholder="Introduce tu dominio" class="domaincheckinput" name="domain" type="text"><button type="submit" class="btn btn-primary" onclick="domainCheckSitecat()">Comprobar</button></form></div><form class="direct-link-form" onclick="shopSitecat();window.open('https://www.ionos.es/dominios/dominios?ac=OM.WE.WEo50K361597T7073a','_blank')"><button type="submit" class="btn btn-primary" >Ver tienda</button></form></div><style>
+#bio_ep {
+    background-image: url(./fileadmin/user_upload/Stage_Domain.png);
+}
+</style><script type="text/javascript">
+  function domainCheckSitecat(){
+       if (typeof window.s === "object" && typeof window.s.apl === 'function' && typeof window.s.t === 'function') {
+       s.events2=s.apl(s.events2, "event120", ",", 1);
+       s.t(s);
+       }
+  }
+  function shopSitecat(){
+    if (typeof window.s === "object" && typeof window.s.apl === 'function' && typeof window.s.t === 'function') {
+       s.events2=s.apl(s.events2, "event121", ",", 1);
+       s.t(s);
+        }
+  }
+</script></div>
+
+</div>
+<script src="typo3temp/assets/compressed/merged-21841063900c56df202ce88d7b11c3fc-4a69b24935e168b795fd1c4e119253f3.js.gzip?1651151462" type="text/javascript"></script>
+<script src="typo3temp/assets/compressed/merged-79689a034e96ed82fa89989cc2ea906b-b9521c27d5b1f0d607eaa98621c346c2.js.gzip?1651151462" type="text/javascript"></script>
+
+<script type="text/javascript">_satellite.pageBottom();</script><div class="tx-cisositecatalyst">
+		
+            <!-- SiteCatalyst code version: H.20.3. Copyright 1997-2009 Omniture, Inc. More info available at http://www.omniture.com -->
+            <script type="text/javascript">var s_account="iaglive";</script>
+            <script type="text/javascript" src="typo3conf/ext/ciso_sitecatalyst/Resources/Public/JavaScript/s_code.js"></script>
+            <script type="text/javascript" src="typo3conf/ext/ciso_sitecatalyst/Resources/Public/JavaScript/utm.js"></script>
+            
+                    <script language="JavaScript" type="text/javascript">
+                        function onRequest(data) {
+                            s.server = "";
+s.visitorNamespace = "1und1internetag";
+s.thisHost = window.location.host;
+s.currencyCode = "EUR";
+s.charSet = "UTF-8";
+s.trackDownloadLinks = true;
+s.trackExternalLinks = true;
+s.trackInlineStats = true;
+s.linkDownloadFileTypes = "exe,zip,wav,mp3,mov,mpg,avi,wmv,pdf,doc,docx,xls,xlsx,ppt,pptx";
+s.linkInternalFilters = "javascript:,.1und1.de,.1und1.at,.1and1.com,.1and1.ca,.1and1.co.uk,.1and1.es,.1and1.fr,.1and1.pl,.1and1.it,.1und1.info,.1and1.mx,.gmx.de,.web.de,united.domain,cinetic.de,schlund.de,.ionos.ca,.ionos.de,.ionos.at,.ionos.es,.ionos.fr,.ionos.it,.ionos.mx,.ionos.co.uk,.ionos.com,"+s.thisHost;
+s.linkLeaveQueryString = false;
+s.linkTrackVars = "None";
+s.linkTrackEvents = "None";
+s.usePlugins = true;
+s.prop11 = "New contract shop";
+s.eVar13 = "New contract shop";
+s.channel = "digitalguide";
+var cookieName = "ac-whorder-es";
+var searchString = document.location.search;
+// removing the '?' at the beginning
+if (searchString.length > 0) {
+  searchString = searchString.substring(1);
+}
+var searchStringParts = searchString.split('&');
+var actionCode = '';
+for (var i=0, j=searchStringParts.length; i<j; i++) {
+  if (searchStringParts[i].search('ac') != -1) {
+    // getting the value by removing the 'ac=' at the beginning
+    actionCode = searchStringParts[i].substring(3);
+  }
+}
+
+// if the actionCode is not in the URL check for the cookie
+if (typeof $.cookie != "undefined" && actionCode == '' && typeof $.cookie(cookieName) != "undefined") {
+  actionCode = $.cookie(cookieName);
+}
+
+if (actionCode != '') {
+  s.campaign = s.eVar23 = actionCode;
+}
+s.prop1 = "hosting_blogs_estructura-y-componentes-de-los-temas-de-wordpress";
+s.prop5 = "dg-hosting";
+s.prop6 = "dg-es";
+s.prop7 = "www.ionos.es";
+s.prop17 = "es";
+s.prop23 = window.navigator.userAgent;
+s.eVar1 = "digitalguide";
+s.eVar2 = "hosting_blogs_estructura-y-componentes-de-los-temas-de-wordpress";
+var currentDate = new Date();
+var day = currentDate.getDate();
+var formattedDay = day <= 9 ? "0" + day : day;
+var month = currentDate.getMonth();
+var formattedMonth = month <= 8 ? "0" + (month + 1) : (month + 1);
+var year = currentDate.getFullYear();
+var hours = currentDate.getHours();
+var formattedHours = hours <= 9 ? "0" + (hours) : hours;
+var minutes = currentDate.getMinutes();
+var formattedMinutes = minutes <= 9 ? "0" + (minutes) : minutes;
+
+var timeStamp = formattedDay + "/" + formattedMonth + "/" + year + "-" + formattedHours + ":" + formattedMinutes;
+s.eVar3 = timeStamp;
+s.eVar6 = "dg-hosting";
+s.eVar7 = "dg-es";
+s.eVar45 = "es";
+                        }
+                        $(window).ready(function() {
+
+                          window.setTimeout(function(){ 
+                              if (typeof window.PrivacyConsent !== "undefined")
+                              {
+                                  // we use the available variable defined by Adpbe DTM script
+                                  if (typeof window.privacyConsentInstance === "undefined") {
+                                    window.privacyConsentInstance = new PrivacyConsent({ whitelist: true });
+                                  }
+                                  
+                                  window.privacyConsentInstance.invoke(
+                                    function() {
+                                        var existingScriptElement = document.getElementsByTagName("script")[0];
+                                        var scriptElement = document.createElement("script");
+                                        scriptElement.type = "text/javascript";
+                                        scriptElement.src = "typo3conf/ext/ciso_sitecatalyst/Resources/Public/JavaScript/s_code.js";
+                                        scriptElement.onload = function() {
+                                            onRequest();
+                                            
+                                            var s_code=s.t();
+                                            if (s_code) document.write(s_code);
+                                        };
+                                        existingScriptElement.parentNode.insertBefore(scriptElement, existingScriptElement);
+                                    },
+                                    PrivacyConsentEnum.STATISTICS,
+                                    this,
+                                    true
+                                  );
+                                  
+                                  window.privacyConsentInstance.initialize();
+                              } else {
+                                // send the tracking for the page
+                                onRequest();
+    
+                                var s_code=s.t();
+                                if (s_code) document.write(s_code);
+                              }
+                          
+                          }, 2000);                         
+                
+                        });
+                </script>
+            <script type="text/javascript"><!--; if (navigator.appVersion.indexOf("MSIE")>=0) document.write(unescape("%3C")+"\!-"+"-"); //--></script>
+            <noscript>
+                <p><a href="http://www.omniture.com" title="Web Analytics"><img src="" height="1" width="1" alt="" /></a></p>
+            </noscript><!--/DO NOT REMOVE/-->
+<!-- End SiteCatalyst code version: H.20.3. -->
+            
+	</div>
+	
+<script type="text/javascript">
+   var page = 'Estructura y componentes de los temas de WordPress';
+   var pageId = '3';
+   var application = 'T3.DG.ES';
+</script>
+<script type="text/javascript" src="typo3conf/ext/ciso_tracking/Resources/Public/Scripts/performance/browser.js"></script>
+
+<script type="text/javascript" src="typo3conf/ext/ciso_tracking/Resources/Public/Scripts/performance/rum.js"></script>
+
+
+<script type="text/javascript">
+UNOUNO = window.UNOUNO || {};
+UNOUNO.tracking = UNOUNO.tracking || {};
+
+
+UNOUNO.tracking.genericTracking = function(siteCatalystParams, type, name, optFullSet) {
+  /*
+    use this API to track specific events independend from page related tracking
+    uses cases for this can be tracking a survey, a clicked link or search related tracking
+  */
+
+  /*
+    here is one code example of how to track events with SiteCatalyst
+    UNOUNO.tracking.genericTracking makes it possible to use a standardized API for all kinds of such tracking codes
+
+    Example (original code):
+
+    var s=s_gi('iagdev');
+    s.linkTrackVars='events,products';
+    s.linkTrackEvents='event7,event8,event9,event10,event11,event12';
+    s.events='event7,event8,event9,event10,event11,event12';
+    s.products=";;;;event7=25|event8=75|event9=100|event10=0|event11=1";
+    s.tl(this,'o','Linkname');
+
+    Standardized UNOUNO.tracking.genericTracking example:
+
+    UNOUNO.tracking.genericTracking({
+
+      events: 'event7,event8,event9,event10,event11,event12',
+
+      products: ';;;;event7=25|event8=75|event9=100|event10=0|event11=1'
+
+    });
+
+    See wiki for complete API: http://wiki.intranet.1and1.com/bin/view/UE/SitecatalystTracking#Tracking_Events
+
+  */
+
+  var s, key, linkTrackVars, linkTrackEvents;
+
+  if (typeof s_gi !== 'undefined' && typeof s_account !== 'undefined') {
+
+    // s_account is triggered by tag manager script and has values iagdev or iaglive
+
+    s = s_gi(s_account);
+
+    // generate linkTrackVars based on siteCatalystParams
+
+    linkTrackVars = '';
+    /* transactionId  */
+    
+    if ((typeof siteCatalystParams["list2"] != "undefined" && siteCatalystParams["list2"].indexOf("chat-angenommen") == 0  || typeof siteCatalystParams["prop60"] != "undefined" && siteCatalystParams["prop60"].indexOf("ct.btn.MobileZubehoerShop") > -1) && typeof siteCatalystParams["eVar35"] == "undefined"){
+      siteCatalystParams["eVar35"] = UNOUNO.tracking.transactionId;
+    }
+
+    for (key in siteCatalystParams) {
+
+      if (siteCatalystParams.hasOwnProperty(key)) {
+
+        linkTrackVars = linkTrackVars + key + ',';
+
+        if (key === 'events') {
+
+          // if the special param events is used, generate an additionally linkTrackEvents property
+
+          linkTrackEvents = siteCatalystParams[key];
+
+        }
+
+      }
+
+    }
+
+    if (linkTrackVars !== '') {
+
+      // remove trailing comma
+
+      linkTrackVars = linkTrackVars.substr(0, linkTrackVars.length - 1);
+
+      // server time in every request
+      linkTrackVars += ",eVar3";
+      
+      // copy generated linkTrackVars and optional linkTrackEvents to the s object
+      s.linkTrackVars = linkTrackVars;
+
+      if (linkTrackEvents) {
+
+        s.linkTrackEvents = linkTrackEvents;
+
+      }
+
+      // clone all siteCatalystParams to s object
+
+      for (key in siteCatalystParams) {
+
+        if (siteCatalystParams.hasOwnProperty(key)) {
+
+          s[key] = siteCatalystParams[key];
+
+        }
+
+      }
+
+      // finally send SiteCatalyst tracking request with type and name or their defaults
+
+      if(optFullSet == true){
+         s.t(this, type || 'o', name || 'generic-tracking');
+      }
+      else{
+         s.tl(this, type || 'o', name || 'generic-tracking');
+      }
+
+
+
+
+    }
+
+  }
+
+};
+</script>
+</body>
+</html>
+<!-- cached statically on: 22-05-22 16:42 -->
+<!-- expires on: 22-05-22 18:42 -->
